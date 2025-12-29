@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Jefferson brand fonts */
+@font-face {
+  font-family: "GT Sectra Fine";
+  src: url("/fonts/GTSectraFine-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Sectra Fine";
+  src: url("/fonts/GTSectraFine-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Sectra Fine";
+  src: url("/fonts/GTSectraFine-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Haptik";
+  src: url("/fonts/GTHaptik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Haptik";
+  src: url("/fonts/GTHaptik-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Haptik";
+  src: url("/fonts/GTHaptik-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Haptik";
+  src: url("/fonts/GTHaptik-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/fonts/MuseoSans-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/fonts/MuseoSans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 61% 21%; /* Jefferson Deep Blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 67% 61%; /* Jefferson Bright Blue */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 60 95% 51%; /* Volt Green */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Use direct font-family CSS instead of @apply to avoid class not found error */
+    font-family: "GT Haptik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* Remove duplicate body declaration and use proper CSS syntax */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "GT Sectra Fine", Georgia, serif;
+  font-weight: 700;
+}
+
+.btn,
+button {
+  font-family: "GT Haptik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Add Jefferson brand elements */
+.jefferson-grid {
+  background-image: linear-gradient(to right, rgba(21, 36, 86, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(21, 36, 86, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.jefferson-transverse-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(89, 183, 223, 0.1),
+    rgba(89, 183, 223, 0.1) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+}
+
+.jefferson-point-grid {
+  background-image: radial-gradient(rgba(21, 36, 86, 0.2) 1px, transparent 1px);
+  background-size: 15px 15px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* Matches default header height */
+}
+
+/* Enhanced scroll behavior and added focus-visible styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(199, 67%, 61%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Improved fade-in animation for sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Added smooth transitions for all interactive elements */
+button,
+a,
+.card {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  button,
+  a,
+  .card {
+    transition-duration: 0ms;
+  }
+}
